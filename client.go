@@ -49,9 +49,9 @@ func NewClient(accessKey string, httpsEnabled bool, timeout int) *Client {
 }
 
 // Check performs a single API call to the external ipstack API and returns
-// the response object or any occured errors
+// the response object or any occurred errors
 func (c *Client) Check(ip string) (r *Response, err error) {
-	// Unfortunatly ipstack only offers unencrypted http in it's free tier.
+	// Unfortunately ipstack only offers unencrypted http in it's free tier.
 	// Therefore we limit the protocol to http by default
 	protocol := "http://"
 	if c.httpsEnabled {
